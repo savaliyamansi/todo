@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* overflow: hidden; */
+    background-color: #1d2630;
+}
+
+
+h2 {
+    font-size: 25px;
+    margin-top: 25px;
+    color: rgb(250, 250, 250);
+    margin-bottom: -100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    max-width: 405px;
+    margin: 135px auto;
+    /* border-radius: 6px; */
+    background-color: #f0eaef;
+    padding: 28px 0;
+}
+
+
+/* enter  task */
+.task-input {
+    height: 52px;
+    padding: 0 25px;
+    position: relative;
+}
+
+.task-input input {
+    height: 100%;
+    width: 100%;
+    padding: 0 20px 0 15px;
+    font-size: 18px;
+    border-radius: 2px;
+    border: 1.5px solid #111;
+    outline: none;
+} 
+
+
+
+/* enter task ...color */
+.task-input input::placeholder { 
+    color: #d1ddd1;               
+}
+
+
+ /* clear complete button */
+.controls,li{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.controls {
+    padding: 18px 25px;
+    border-bottom: 1px solid #111;
+}
+
+.filters span {
+    cursor: pointer;
+    margin: 0 8px;
+    font-size: 17px;
+}
+
+.filters span:first-child {
+    margin-left: 0;
+}
+
+.filters span.active {
+    color:rgb(62, 110, 214);
+}
+ 
+ /* clear compelte button box.. */
+.controls .clear-btn {
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 2px;
+    padding: 7px 13px;
+    cursor: pointer;
+    background:rgb(84, 151, 232);
+}
+
+
+/* line margin set */
+.task-box{
+    margin: 20px 25px;          
+}
+
+.task-box .task{
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(116, 133, 163);
+}
+
+.task-box .task:last-child{
+    padding-bottom: 0;
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+.task label{
+    display: flex;
+}
+
+.task label p.checked{
+    text-decoration: line-through;
+}
+
+.task label input{
+    margin-right: 12px;
+    margin-top: 6px;
+}
+
+.task .settings{
+  cursor: pointer;
+  position: relative;
+}
+
+.settings .task-menu{
+     position: absolute;
+     background-color: #fff;
+     padding:5px 0;
+     right: -5px;
+     z-index: 2;
+     bottom: -65px;
+     border-radius: 4px;
+     transform: scale(0);
+     transform-origin: top right;
+     transition: transform 0.3s ease;
+     box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.settings .task-menu.show{
+    transform: scale(1);
+}
+
+ /* delete-edit button */
+.task-menu li{
+    height: 25px;
+    font-size: 16px;
+    padding: 17px 10px;
+    margin-bottom: 2px;
+    justify-content: flex-start;
+}
+
+.task-menu li:last-child{
+    margin-bottom: 0;
+}
+
+.task-menu li:hover{
+    background-color:#ffffff;  
+}
+
+.task-menu li .edit{
+    padding-right: 8px;
+}
+
+.task-menu li i{
+    padding: 8px;
+}
