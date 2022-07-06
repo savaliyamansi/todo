@@ -34,24 +34,19 @@
     <script>
         const taskInput = document.querySelector('.task-input input'),
             filters = document.querySelectorAll('.filters span'),
-            clearCompleted = document.querySelector('.clear-btn'),
-            itemCountSpan = document.getElementById('item-count'),
             uncheckedCountSpan = document.getElementById('unchecked-count'),
             taskBox = document.querySelector('.task-box');
 
         let editId;
         let isEditedTask = false;
         let todos = JSON.parse(localStorage.getItem("todo-list"));
-
         let currentFilter = "all";
 
         filters.forEach(btn => {
             btn.addEventListener("click", () => {
-                // console.log(btn);
                 document.querySelector('span.active').classList.remove("active");
                 btn.classList.add("active");
-                // btn.classList.add("all");
-                showTodo(btn.id);                             // pending and completed filter
+                showTodo(btn.id);                           
                 currentFilter = btn.id;
                 countItem();
             });
@@ -86,7 +81,6 @@
         countItem();
 
         function showMenu(selectedTask) {
-            // console.log(selectedTask);
             let taskMenu = selectedTask.parentElement.lastElementChild;
             taskMenu.classList.add("show");
             document.addEventListener('click', e => {
@@ -97,14 +91,12 @@
         }
 
         function editTask(taskId, taskName) {
-            // console.log(taskId, taskName);
             editId = taskId;
             isEditedTask = true;
             taskInput.value = taskName;
         }
 
         function deleteTask(deleteId) {
-            // console.log(deleteId);
             todos.splice(deleteId, 1);
             localStorage.setItem("todo-list", JSON.stringify(todos));
             showTodo(currentFilter);
@@ -112,17 +104,14 @@
         }
 
         const clearBtn = () => {
-            // console.log("clearBtn")
             var NewArray = [...todos];
             var newItem = NewArray.filter((element => element.status !== "completed"));
             todos = [...newItem];
-            // console.log(newItem);
             localStorage.setItem("todo-list", JSON.stringify(todos));
             showTodo(currentFilter);
         }
 
         function updateStatus(selectedTask) {
-            // console.log(selectedTask);
             let taskName = selectedTask.parentElement.lastElementChild;
             if (selectedTask.checked) {
                 taskName.classList.add("checked");
@@ -135,8 +124,6 @@
             showTodo(currentFilter);
             countItem();
         }
-
-       
 
         taskInput.addEventListener("keyup", e => {
             let userTask = taskInput.value;
@@ -154,10 +141,9 @@
 
                 taskInput.value = "";
                 localStorage.setItem("todo-list", JSON.stringify(todos));
-                showTodo(currentFilter);              // show current filter  
+                showTodo(currentFilter);            
                 countItem();
             }
-            // console.log(todos);
         });
 
         function countItem() {
@@ -168,7 +154,6 @@
             uncheckedCountSpan.innerHTML = uncheckedCount
             uncheckedCount = newItems;
         }
-
     </script>
 </body>
 </html>

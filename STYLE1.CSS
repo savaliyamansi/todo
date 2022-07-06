@@ -1,14 +1,12 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    /* overflow: hidden; */
     background-color: #1d2630;
 }
-
 
 h2 {
     font-size: 25px;
@@ -21,13 +19,10 @@ h2 {
 .wrapper {
     max-width: 405px;
     margin: 135px auto;
-    /* border-radius: 6px; */
     background-color: #f0eaef;
     padding: 28px 0;
 }
 
-
-/* enter  task */
 .task-input {
     height: 52px;
     padding: 0 25px;
@@ -42,18 +37,14 @@ h2 {
     border-radius: 2px;
     border: 1.5px solid #111;
     outline: none;
-} 
-
-
-
-/* enter task ...color */
-.task-input input::placeholder { 
-    color: #d1ddd1;               
 }
 
+.task-input input::placeholder {
+    color: #d1ddd1;
+}
 
- /* clear complete button */
-.controls,li{
+.controls,
+li {
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -75,10 +66,9 @@ h2 {
 }
 
 .filters span.active {
-    color:rgb(62, 110, 214);
+    color: rgb(62, 110, 214);
 }
- 
- /* clear compelte button box.. */
+
 .controls .clear-btn {
     outline: none;
     border: none;
@@ -86,16 +76,14 @@ h2 {
     border-radius: 2px;
     padding: 7px 13px;
     cursor: pointer;
-    background:rgb(84, 151, 232);
+    background: rgb(84, 151, 232);
 }
 
-
-/* line margin set */
-.task-box{
-    margin: 20px 25px;          
+.task-box {
+    margin: 20px 25px;
 }
 
-.task-box .task{
+.task-box .task {
     list-style: none;
     font-size: 17px;
     margin-bottom: 18px;
@@ -103,50 +91,49 @@ h2 {
     border-bottom: 1px solid rgb(116, 133, 163);
 }
 
-.task-box .task:last-child{
+.task-box .task:last-child {
     padding-bottom: 0;
     border-bottom: 0;
     margin-bottom: 0;
 }
 
-.task label{
+.task label {
     display: flex;
 }
 
-.task label p.checked{
+.task label p.checked {
     text-decoration: line-through;
 }
 
-.task label input{
+.task label input {
     margin-right: 12px;
     margin-top: 6px;
 }
 
-.task .settings{
-  cursor: pointer;
-  position: relative;
+.task .settings {
+    cursor: pointer;
+    position: relative;
 }
 
-.settings .task-menu{
-     position: absolute;
-     background-color: #fff;
-     padding:5px 0;
-     right: -5px;
-     z-index: 2;
-     bottom: -65px;
-     border-radius: 4px;
-     transform: scale(0);
-     transform-origin: top right;
-     transition: transform 0.3s ease;
-     box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+.settings .task-menu {
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 0;
+    right: -5px;
+    z-index: 2;
+    bottom: -65px;
+    border-radius: 4px;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
 }
 
-.settings .task-menu.show{
+.settings .task-menu.show {
     transform: scale(1);
 }
 
- /* delete-edit button */
-.task-menu li{
+.task-menu li {
     height: 25px;
     font-size: 16px;
     padding: 17px 10px;
@@ -154,18 +141,18 @@ h2 {
     justify-content: flex-start;
 }
 
-.task-menu li:last-child{
+.task-menu li:last-child {
     margin-bottom: 0;
 }
 
-.task-menu li:hover{
-    background-color:#ffffff;  
+.task-menu li:hover {
+    background-color: #ffffff;
 }
 
-.task-menu li .edit{
+.task-menu li .edit {
     padding-right: 8px;
 }
 
-.task-menu li i{
+.task-menu li i {
     padding: 8px;
 }
